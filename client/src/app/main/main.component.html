@@ -1,0 +1,14 @@
+<rz-content #content1 container="main">
+  <rz-heading #pageTitle size="H1" text="Main">
+  </rz-heading>
+  <div class="row">
+    <div class="col-md-6">
+      <rz-dropdown #dropdown0 [data]="raceData" placeholder="Select a race" textProperty="race1" [(ngModel)]="dropdown" valueProperty="race1" name="dropdown0">
+      </rz-dropdown>
+    </div>
+    <div class="col-md-6">
+      <rz-label #label0 [text]="dropdown">
+      </rz-label>
+    </div>
+  </div>
+</rz-content>

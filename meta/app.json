@@ -1,0 +1,24 @@
+{
+  "dataSources": [
+    "AzureDatabase"
+  ],
+  "generator": "@radzen/angular-generator",
+  "https": false,
+  "layouts": [
+    "Login",
+    "Main"
+  ],
+  "logo": "",
+  "name": "DnDCharGen",
+  "navigation": [
+    "Main"
+  ],
+  "pages": [
+    "Main"
+  ],
+  "serverLang": "cs",
+  "serverProject": true,
+  "serverVersion": "2.2",
+  "startPage": "Main",
+  "theme": "ultima/grey"
+}

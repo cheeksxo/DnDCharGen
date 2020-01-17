@@ -1,0 +1,82 @@
+{
+  "access": [
+    "Everybody"
+  ],
+  "components": [
+    {
+      "components": [
+        {
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Main",
+          "type": "heading"
+        },
+        {
+          "components": [
+            {
+              "class": "col-md-6",
+              "components": [
+                {
+                  "data": "${raceData}",
+                  "name": "dropdown0",
+                  "placeholder": "Select a race",
+                  "textProperty": "race1",
+                  "type": "dropdown",
+                  "value": "${dropdown}",
+                  "valueProperty": "race1"
+                }
+              ],
+              "name": "col0",
+              "type": "col"
+            },
+            {
+              "class": "col-md-6",
+              "components": [
+                {
+                  "name": "label0",
+                  "text": "${dropdown}",
+                  "type": "label"
+                }
+              ],
+              "name": "col1",
+              "type": "col"
+            }
+          ],
+          "name": "row0",
+          "type": "row"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "error": [
+          {
+            "severity": "error",
+            "summary": "${result.error}",
+            "type": "notify"
+          }
+        ],
+        "name": "AzureDatabase.getRaces",
+        "then": [
+          {
+            "name": "raceData",
+            "type": "set",
+            "value": "${result.value}"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "CurrentlySelected",
+        "type": "set",
+        "value": "\"High Elf\""
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "Main"
+}

@@ -1,0 +1,175 @@
+{
+  "info": {
+    "title": "AzureDatabase",
+    "x-type": "odata",
+    "x-connector": "mssql",
+    "x-connector-version": 12
+  },
+  "definitions": {
+    "Race": {
+      "x-table": "dbo.races",
+      "resource": "Races",
+      "required": [],
+      "properties": {
+        "race1": {
+          "x-original-name": "race",
+          "type": "string",
+          "length": 255,
+          "x-key": true,
+          "x-virtual": true
+        },
+        "size": {
+          "type": "string",
+          "length": 255
+        },
+        "speed": {
+          "type": "integer"
+        },
+        "darkvision": {
+          "type": "integer"
+        },
+        "strBonus": {
+          "type": "integer"
+        },
+        "dexBonus": {
+          "type": "integer"
+        },
+        "conBonus": {
+          "type": "integer"
+        },
+        "intBonus": {
+          "type": "integer"
+        },
+        "wisBonus": {
+          "type": "integer"
+        },
+        "chaBonus": {
+          "type": "integer"
+        },
+        "feature1": {
+          "type": "string",
+          "length": 255
+        },
+        "f1desc": {
+          "type": "string",
+          "length": 255
+        },
+        "feature2": {
+          "type": "string",
+          "length": 255
+        },
+        "f2desc": {
+          "type": "string",
+          "length": 255
+        },
+        "feature3": {
+          "type": "string",
+          "length": 255
+        },
+        "f3desc": {
+          "type": "string",
+          "length": 255
+        },
+        "feature4": {
+          "type": "string",
+          "length": 255
+        },
+        "f4desc": {
+          "type": "string",
+          "length": 255
+        },
+        "feature5": {
+          "type": "string",
+          "length": 255
+        },
+        "f5desc": {
+          "type": "string",
+          "length": 255
+        },
+        "feature6": {
+          "type": "string",
+          "length": 255
+        },
+        "f6desc": {
+          "type": "string",
+          "length": 255
+        }
+      },
+      "x-view": true
+    }
+  },
+  "paths": {
+    "/Races": {
+      "get": {
+        "operationId": "getRaces",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Race"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "basePath": "/odata/AzureDatabase",
+  "host": "localhost:5000",
+  "schemes": [
+    "http"
+  ]
+}
